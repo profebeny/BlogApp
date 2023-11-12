@@ -17,7 +17,7 @@
         android:padding="10dp"
         android:textColor="#FAFAFA"
         android:background="#2C2C2C"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="5dp"
         android:drawableLeft="@drawable/ic_entrada"
         />
 
@@ -31,28 +31,31 @@
             android:layout_margin="10dp">
 
         <TextView
+            android:id="@+id/txtTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TITULO DE LA ENTRADA"
             android:textSize="20dp"
             android:gravity="left"
-            android:padding="10dp"
+            android:padding="3dp"
             android:textColor="@color/textos"
             android:drawableLeft="@drawable/ic_titulo"
             />
 
             <TextView
+                android:id="@+id/txtAutor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="AUTOR"
-                android:textSize="20dp"
-                android:gravity="left"
-                android:padding="10dp"
-                android:textColor="@color/textos"
                 android:layout_marginBottom="10dp"
                 android:drawableLeft="@drawable/ic_autor"
-                />
+                android:gravity="left"
+                android:padding="3dp"
+                android:text="AUTOR"
+                android:textColor="@color/textos"
+                android:textSize="20dp" />
+
             <TextView
+                android:id="@+id/txtContenido"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Descripción Completa"
@@ -64,21 +67,4 @@
                 />
         </LinearLayout>
     </ScrollView>
-
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
-            <Button
-                android:id="@+id/btnCrearTicket"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Cerrar"
-                android:layout_margin="20dp"
-                android:layout_weight="1"
-                android:layout_marginBottom="20dp"
-                android:backgroundTint="#2C2C2C"/>
-
-        </LinearLayout>
 </LinearLayout>

@@ -2,8 +2,8 @@ package com.people4business.blogapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import com.people4business.blogapp.databinding.ActivityMainBinding
+import com.people4business.blogapp.fragments.Entrada
 import com.people4business.blogapp.fragments.NuevaEntrada
 
 class MainActivity : AppCompatActivity() {
@@ -16,9 +16,11 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.fabNuevaEntrada.setOnClickListener{
-            Toast.makeText(this,"click",Toast.LENGTH_SHORT).show();
-            val nuevaEntrada =NuevaEntrada()
-            nuevaEntrada.show(supportFragmentManager,"Nueva Entrada")
+            //val nuevaEntrada =NuevaEntrada()
+            //nuevaEntrada.show(supportFragmentManager,"Nueva Entrada")
+
+            val entrada =Entrada("titulo","Beny Roman","Descripcion")
+            entrada.show(supportFragmentManager,"Entrada")
         }
     }
 }
