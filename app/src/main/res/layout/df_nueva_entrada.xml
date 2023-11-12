@@ -94,7 +94,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/btnCrearTicket"
+                android:id="@+id/btnPublicar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Publicar"
