@@ -15,6 +15,7 @@ class Entrada(titulo: String?="SE", autor: String?="SE", contenido: String?="SE"
     val titulo = titulo
     val autor = autor
     val contenido = contenido
+    val fechaHora = fechaHora
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,10 +31,12 @@ class Entrada(titulo: String?="SE", autor: String?="SE", contenido: String?="SE"
         val txtTitulo = view.findViewById<TextView>(R.id.txtTitulo)
         val txtAutor = view.findViewById<TextView>(R.id.txtAutor)
         val txtContenido = view.findViewById<TextView>(R.id.txtContenido)
+        val txtfechaHora = view.findViewById<TextView>(R.id.txtfechaHora)
 
         txtTitulo.text = titulo
         txtAutor.text = autor
         txtContenido.text = contenido
+        txtfechaHora.text = fechaHora
 
 
     }

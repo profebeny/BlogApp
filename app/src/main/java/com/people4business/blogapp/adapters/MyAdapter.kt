@@ -35,6 +35,7 @@ class MyAdapter(private var EntradaList : ArrayList<EntradaBlog>) : RecyclerView
         holder.tvTitulo.text = Entradaitem.titulo
         holder.tvAutor.text = Entradaitem.autor
         holder.tvPosicion.text = ""+position
+        holder.tvfechaHora.text = ""+Entradaitem.fechaHora
 
         if (Entradaitem.contenido!!.length >= 70){
             holder.tvContenido.text = Entradaitem.contenido!!.substring(0,70)
@@ -62,6 +63,7 @@ class MyAdapter(private var EntradaList : ArrayList<EntradaBlog>) : RecyclerView
         val tvAutor : TextView = itemView.findViewById(R.id.tvAutor)
         val tvContenido : TextView = itemView.findViewById(R.id.tvContenido)
         val tvPosicion : TextView = itemView.findViewById(R.id.tvPosicion)
+        val tvfechaHora : TextView = itemView.findViewById(R.id.tvfechaHora)
         init {
             itemView.setOnClickListener(){
                 listener.onItemClick(adapterPosition)
