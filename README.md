@@ -1,3 +1,4 @@
+
 #BlogApp
 
 Aplicación para Android desarrollada en Kotlin con un servicio web Firebase que
@@ -13,11 +14,11 @@ https://drive.google.com/file/d/13m57vVVguOdqTE104TUFpZuvPD2DN4eM/view?usp=shari
 Elaboración de un prototipo que permita identificar las interfaces principales y secundarias, elementos a programar y la funcionalidad de los mismos. Correcciones y simulación de como funcionará el proyecto.
 Liga: https://www.figma.com/file/bgAqFS5kwBDG19qJxXyPBH/BlogApp?type=design&node-id=0%3A1&mode=design&t=xH6F5qM785XD8OjY-1
 
+[![figma](https://github.com/profebeny/BlogApp/blob/master/assets/figma.png "figma")](https://github.com/profebeny/BlogApp/blob/master/assets/figma.png "figma")
 
 ## Servidor de Base de Datos (Nube)
 ###  Realtime Firebase
-
-
+[![firebase](https://github.com/profebeny/BlogApp/blob/master/assets/postman.png "firebase")](https://github.com/profebeny/BlogApp/blob/master/assets/postman.png "firebase")
 
 
 ###  Nueva Entrada con Postman
