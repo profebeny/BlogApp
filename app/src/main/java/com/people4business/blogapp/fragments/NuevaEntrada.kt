@@ -1,9 +1,13 @@
 package com.people4business.blogapp.fragments
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import android.speech.RecognizerIntent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
@@ -19,6 +23,9 @@ class NuevaEntrada:DialogFragment(){
 
     lateinit var viewModel: NuevaEntradaViewModel
     val funciones = Funciones()
+    lateinit var txtVDescripcion:TextView
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,7 +41,12 @@ class NuevaEntrada:DialogFragment(){
         val btnPublicar = view.findViewById<TextView>(R.id.btnPublicar)
         val txtTituloPost = view.findViewById<TextView>(R.id.txtTituloPost)
         val txtTitulo = view.findViewById<TextView>(R.id.txtTitulo)
-        val txtVDescripcion = view.findViewById<TextView>(R.id.txtVDescripcion)
+        txtVDescripcion = view.findViewById<TextView>(R.id.txtVDescripcion)
+        val imgMicro = view.findViewById<ImageView>(R.id.imgMicro)
+
+        imgMicro.setOnClickListener{
+            displaySpeechRecognizer();
+        }
 
         btnPublicar.setOnClickListener {
             if(validar(txtTituloPost.text.toString(),txtTitulo.text.toString(),txtVDescripcion.text.toString()))
@@ -45,6 +57,15 @@ class NuevaEntrada:DialogFragment(){
                 }
             }
         }
+    }
+
+    // Create an intent that can start the Speech Recognizer activity
+    private fun displaySpeechRecognizer() {
+        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+            putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+        }
+        // This starts the activity and populates the intent with the speech text.
+        startActivityForResult(intent, Companion.SPEECH_REQUEST_CODE)
     }
 
     private fun validar(titulo: String, autor: String, contenido: String): Boolean {
@@ -80,5 +101,22 @@ class NuevaEntrada:DialogFragment(){
                 super.dismiss()
             }
         })
+    }
+
+    // This callback is invoked when the Speech Recognizer returns.
+// This is where you process the intent and extract the speech text from the intent.
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == Companion.SPEECH_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            val spokenText: String? =
+                data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS).let { results ->
+                    results!![0]
+                }
+            txtVDescripcion.text = ""+txtVDescripcion.text + " " +spokenText
+        }
+        super.onActivityResult(requestCode, resultCode, data)
+    }
+
+    companion object {
+        private const val SPEECH_REQUEST_CODE = 0
     }
 }

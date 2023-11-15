@@ -14,9 +14,15 @@ class Funciones {
         {
             return true
         }else{
-            Toast.makeText(context, "REVISA TU CONEXIÓN", Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "REVISA TU CONEXIÓN", Toast.LENGTH_SHORT).show()
             return false
         }
+    }
+
+    fun isNetDisponible_MSG(context: Context): Boolean {
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val actNetInfo = connectivityManager.activeNetworkInfo
+        return actNetInfo != null && actNetInfo.isConnected
     }
 
     fun dataTime():String {
@@ -24,4 +30,6 @@ class Funciones {
         return datetime.toString()
         //println() // 2017-01-01T22:27:06.006276200
     }
+
+
 }
