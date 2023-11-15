@@ -49,4 +49,8 @@ https://blogapp-78cc1-default-rtdb.firebaseio.com/entradas.json
 
 
 ###  Funcionamiento offline / online
+Cuando la aplicación se encuentra en linea descarga y actualiza las entradas existentes en el **servidor Firebase** y las almacena en una base de dsatos **SQLite** gestionada con la librería **Room** .
 
+Si la aplicación no cuenta con conexión de datos o wifi al momento de iniciar, se cargan las entradas de la base de datos Room.
+
+Si la app detecta conexión, automaticamente se actualizan las enytradas en la vista y en la base de datos.
