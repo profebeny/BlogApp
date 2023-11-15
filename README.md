@@ -7,6 +7,7 @@ posee un conjunto reducido de características propias de un Blog de Internet.
 https://drive.google.com/file/d/13m57vVVguOdqTE104TUFpZuvPD2DN4eM/view?usp=sharing
 
 ###  Video demostrativo:
+**https://www.youtube.com/watch?v=Anj7Jd7PnWE
 
 ## Prototipo Figma
 Elaboración de un prototipo que permita identificar las interfaces principales y secundarias, elementos a programar y la funcionalidad de los mismos. Correcciones y simulación de como funcionará el proyecto.

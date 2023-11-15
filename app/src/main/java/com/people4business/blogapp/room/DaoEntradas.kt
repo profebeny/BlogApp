@@ -1,6 +1,7 @@
 package com.people4business.blogapp.room
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -18,5 +19,8 @@ interface DaoEntradas {
     //se agregarán los elementos que no existen, los elementos que ya existen serán reemplazados por los nuevos.
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertEntrada(tbEntrada: TB_Entradas)
+
+    @Query("DELETE FROM TB_Entradas")
+    fun deleteEntradas()
 
 }

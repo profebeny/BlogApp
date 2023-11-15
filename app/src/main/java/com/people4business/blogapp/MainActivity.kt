@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
     var listaTB_Entradas: MutableList<TB_Entradas> = mutableListOf()
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -58,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         EntradasFiltradas = EntradasArrayList
 
         room = Room.databaseBuilder(this, DBEntradas::class.java, "dbEntradas").build()
-
+        //eliminarEntradas(room);
         //====== Si la Red no está disponible trabajará con el modo OffLine
         if (!funciones.isNetDisponible(this)) {
             obtenerEntradas(room)
@@ -150,6 +151,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun eliminarEntradas(room: DBEntradas) {
+        lifecycleScope.launch(Dispatchers.IO) {
+            room.daoEntradas().deleteEntradas()
+        }
+    }
     fun obtenerEntradas(room: DBEntradas) {
         lifecycleScope.launch(Dispatchers.IO) {
             //Limpia EntradasArrayList que es la lista original para no duplicar valores al solicitarlos a la base.
