@@ -41,7 +41,7 @@ class NuevaEntrada:DialogFragment(){
             {
                 if (funciones.isNetDisponible(view.context))
                 {
-                    createUser(txtTituloPost.text.toString(),txtTitulo.text.toString(),txtVDescripcion.text.toString())
+                    createEntrada(txtTituloPost.text.toString(),txtTitulo.text.toString(),txtVDescripcion.text.toString())
                 }
             }
         }
@@ -64,10 +64,9 @@ class NuevaEntrada:DialogFragment(){
         return true
     }
 
-    private fun createUser(titulo: String, autor: String, contenido: String) {
+    private fun createEntrada(titulo: String, autor: String, contenido: String) {
         val entradaBlog  = EntradaBlog(titulo,autor,contenido,funciones.dataTime())
         viewModel.createNewEntrada(entradaBlog)
-
     }
 
     private fun initViewModel() {

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "346140109720",
+    "firebase_url": "https://blogapp-78cc1-default-rtdb.firebaseio.com",
+    "project_id": "blogapp-78cc1",
+    "storage_bucket": "blogapp-78cc1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346140109720:android:ab92ca4094e0978d8659ed",
+        "android_client_info": {
+          "package_name": "com.people4business.blogapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkVRNEGacwkRQvIR-5fUzRGMFL-9vZhVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

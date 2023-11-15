@@ -9,4 +9,6 @@ interface ApiService {
     @POST("entradas.json")
     @Headers("Accept:application/json", "Content-Type:application/json")
     fun createEntrada(@Body params: EntradaBlog): Call<EntradaBlogResponse>
+
+
 }

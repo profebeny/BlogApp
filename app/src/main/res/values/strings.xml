@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">BlogApp</string>
+    <string-array name="Filter">
+        <item>Titulo</item>
+        <item>Autor</item>
+        <item>Contenido</item>
+        <item>Todos</item>
+    </string-array>
+
 </resources>
+

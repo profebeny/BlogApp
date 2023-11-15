@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.people4business.blogapp.R
 
-class Entrada(titulo: String, autor: String, contenido: String) : DialogFragment() {
+class Entrada(titulo: String?="SE", autor: String?="SE", contenido: String?="SE", fechaHora:String?="SE") : DialogFragment() {
 
     val titulo = titulo
     val autor = autor
